@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descrivi!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        :root {
+            --green: #58cc02; --light-blue: #1cb0f6; --red: #ff4b4b; --yellow: #ffc800;
+            --purple: #ce82ff; --dark-blue: #2b70c9; --dark-text: #333; --white: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.15);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .game-container {
+            background-color: var(--yellow);
+            color: var(--dark-text);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px var(--shadow-color);
+            text-align: center;
+            width: 90%;
+            max-width: 550px;
+            border-top: 10px solid var(--purple);
+        }
+        h1 { color: var(--dark-blue); margin-top: 0; font-weight: 700; font-size: 2.5em; margin-bottom: 25px; }
+        h2 { color: var(--dark-blue); font-weight: 700; }
+        #main-menu .menu-option { margin-bottom: 20px; }
+        .menu-btn {
+            background-color: var(--dark-blue); color: var(--white); border: none; padding: 20px;
+            font-size: 1.2em; font-weight: 600; border-radius: 12px; cursor: pointer;
+            transition: all 0.2s ease-out; border-bottom: 4px solid #22589e; width: 100%;
+        }
+        .menu-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 15px rgba(0,0,0,0.2); }
+        select#collections-dropdown {
+            width: 100%;
+            padding: 15px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1em;
+            border-radius: 12px;
+            border: 2px solid var(--dark-blue);
+            margin-bottom: 15px;
+        }
+        #file-loader { display: none; }
+        #status-message { margin-top: 10px; font-size: 1.1em; color: var(--dark-text); min-height: 1.2em; }
+        #game-area { display: none; }
+        #word-item {
+            font-size: 3em; font-weight: 700; color: var(--red); margin: 25px 0 35px 0; min-height: 60px;
+            display: flex; align-items: center; justify-content: center; background-color: #fffaf0;
+            border-radius: 15px; padding: 15px 20px; box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        p.instructions { font-size: 1.2em; margin-bottom: 15px; font-weight: 600; }
+        #forbidden-words {
+            list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 12px; margin-bottom: 40px;
+        }
+        #forbidden-words li {
+            background-color: #f7f7f7;
+            color: var(--dark-text); padding: 10px 20px; border-radius: 30px; font-size: 1.05em;
+            font-weight: 600; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); border: 1px solid #ddd;
+        }
+        #new-word-btn {
+            background-color: var(--green); color: var(--white); border: none; padding: 18px 35px;
+            font-size: 1.3em; font-weight: 700; border-radius: 12px; cursor: pointer;
+            transition: all 0.2s ease-out; border-bottom: 5px solid #45a401;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .back-btn {
+            background-color: #888; margin-top: 15px; color: white; padding: 10px 20px; border: none;
+            border-radius: 8px; cursor: pointer; font-weight: 600; display: inline-block;
+            border-bottom: 4px solid #666; font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Descrivi!</h1>
+        <div id="main-menu">
+            <div class="menu-option">
+                <label for="collections-dropdown" style="font-weight: 600; color: var(--dark-blue); font-size: 1.2em; margin-bottom: 10px; display: block;">Scegli una categoria:</label>
+                <select id="collections-dropdown">
+                    </select>
+                <button id="start-from-collection-btn" class="menu-btn" style="margin-top: 15px;">Avvia Gioco</button>
+            </div>
+            <hr style="border: 1px solid var(--dark-blue); margin: 30px 0;">
+            <div class="menu-option">
+                <input type="file" id="file-loader" accept=".json">
+                <label for="file-loader" class="menu-btn">Oppure Carica dal Computer</label>
+            </div>
+            <div id="status-message"></div>
+        </div>
+
+        <div id="game-area">
+            <h2 id="word-item">...</h2>
+            <p class="instructions"><strong>Non puoi dire queste parole:</strong></p>
+            <ul id="forbidden-words"></ul>
+            <button id="new-word-btn">Nuova Parola</button>
+            <button id="back-to-menu-from-game" class="back-btn">Torna al Menu</button>
+        </div>
+    </div>
+    <script>
+        // --- CONFIGURAZIONE DEI FILE JSON ---
+        // Associa il testo che apparirà nel menu al nome del file corrispondente.
+        const collectionFiles = {
+            "🍔 Cibi e Bevande 🍹": "cibi.json",
+            "🎨 Interessi e Hobby 🎮": "interessi.json",
+            "🌊 Mare e Montagna ⛰️": "giornata_mare_montagna.json",
+            "🏛️ Monumenti Famosi 🌍": "Monumenti_famosi.json",
+            "🧑‍🎤 Personaggi Famosi 🎬": "personaggi_famori.json",
+            "⚽ Tipi di Sport 🏆": "tipi_di_sport.json"
+        };
+        // --- FINE CONFIGURAZIONE ---
+
+        const mainMenu = document.getElementById('main-menu');
+        const gameArea = document.getElementById('game-area');
+        const fileLoaderInput = document.getElementById('file-loader');
+        const statusMessage = document.getElementById('status-message');
+        const wordItemElement = document.getElementById('word-item');
+        const forbiddenWordsList = document.getElementById('forbidden-words');
+        const newWordButton = document.getElementById('new-word-btn');
+        const backToMenuFromGameBtn = document.getElementById('back-to-menu-from-game');
+        const collectionsDropdown = document.getElementById('collections-dropdown');
+        const startFromCollectionBtn = document.getElementById('start-from-collection-btn');
+
+        let currentCollectionData = [];
+        let lastIndex = -1;
+
+        function showScreen(screen) {
+            mainMenu.style.display = 'none';
+            gameArea.style.display = 'none';
+            screen.style.display = 'block';
+        }
+
+        function showMainMenu() {
+            showScreen(mainMenu);
+            statusMessage.textContent = "";
+            fileLoaderInput.value = '';
+        }
+        
+        // Funzione per caricare e avviare il gioco da un file JSON
+        async function loadAndStart(file) {
+            statusMessage.textContent = 'Caricamento...';
+            try {
+                const response = await fetch(file);
+                if (!response.ok) {
+                    throw new Error(`Impossibile caricare il file: ${response.statusText}`);
+                }
+                const data = await response.json();
+                if (Array.isArray(data) && data.length > 0) {
+                    currentCollectionData = data;
+                    startGame();
+                } else {
+                    throw new Error('Il file è vuoto o non ha il formato corretto.');
+                }
+            } catch (error) {
+                console.error('Errore durante il caricamento:', error);
+                statusMessage.textContent = `Errore: ${error.message}`;
+                showMainMenu();
+            }
+        }
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    if (Array.isArray(data) && data.length > 0) {
+                        currentCollectionData = data;
+                        startGame();
+                    } else {
+                        throw new Error('Il file è vuoto o non ha il formato corretto.');
+                    }
+                } catch (error) {
+                    statusMessage.textContent = 'Errore: il file JSON non è valido!';
+                }
+            };
+            reader.readAsText(file);
+        }
+        
+        function populateDropdown() {
+            const collectionNames = Object.keys(collectionFiles);
+            collectionsDropdown.innerHTML = '';
+            collectionNames.forEach(name => {
+                const option = document.createElement('option');
+                option.value = collectionFiles[name]; // Il valore ora è il nome del file
+                option.textContent = name;
+                collectionsDropdown.appendChild(option);
+            });
+        }
+
+        function startGame() {
+            if (currentCollectionData && currentCollectionData.length > 0) {
+                statusMessage.textContent = '';
+                showScreen(gameArea);
+                showNewWord();
+            } else {
+                statusMessage.textContent = "La collezione selezionata è vuota!";
+                showMainMenu();
+            }
+        }
+
+        function showNewWord() {
+            if (currentCollectionData.length === 0) return;
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * currentCollectionData.length);
+            } while (randomIndex === lastIndex && currentCollectionData.length > 1);
+            
+            lastIndex = randomIndex;
+            const selectedItem = currentCollectionData[randomIndex];
+            wordItemElement.textContent = selectedItem.food;
+            forbiddenWordsList.innerHTML = '';
+            selectedItem.forbidden.forEach(word => {
+                const listItem = document.createElement('li');
+                listItem.textContent = word;
+                forbiddenWordsList.appendChild(listItem);
+            });
+        }
+
+        // Event Listeners
+        fileLoaderInput.addEventListener('change', handleFileSelect);
+        newWordButton.addEventListener('click', showNewWord);
+        backToMenuFromGameBtn.addEventListener('click', showMainMenu);
+
+        startFromCollectionBtn.addEventListener('click', () => {
+            const selectedFile = collectionsDropdown.value;
+            if (selectedFile) {
+                loadAndStart(selectedFile);
+            }
+        });
+
+        // Popola il menu a tendina quando la pagina è pronta
+        document.addEventListener('DOMContentLoaded', populateDropdown);
+
+    </script>
+</body>
+</html>
