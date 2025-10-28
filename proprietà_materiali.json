@@ -1,0 +1,202 @@
+[
+  {
+    "food": "Durezza",
+    "forbidden": ["Graffiare", "Scalfire", "Diamante", "Resistenza", "Punta"]
+  },
+  {
+    "food": "Elasticità",
+    "forbidden": ["Molla", "Torna", "Forma", "Allungare", "Elastico"]
+  },
+  {
+    "food": "Fragilità",
+    "forbidden": ["Rompere", "Vetro", "Cadere", "Pezzi", "Urto"]
+  },
+  {
+    "food": "Trasparenza",
+    "forbidden": ["Vetro", "Vedere", "Attraverso", "Luce", "Limpido"]
+  },
+  {
+    "food": "Conducibilità Termica",
+    "forbidden": ["Caldo", "Freddo", "Metallo", "Passare", "Temperatura"]
+  },
+  {
+    "food": "Magnetismo",
+    "forbidden": ["Calamita", "Attirare", "Ferro", "Poli", "Repellere"]
+  },
+  {
+    "food": "Densità",
+    "forbidden": ["Galleggiare", "Affondare", "Peso", "Volume", "Acqua"]
+  },
+  {
+    "food": "Malleabilità",
+    "forbidden": ["Martello", "Schiacciare", "Lamina", "Foglio", "Metallo"]
+  },
+  {
+    "food": "Solubilità",
+    "forbidden": ["Sciogliere", "Acqua", "Zucchero", "Sale", "Mescolare"]
+  },
+  {
+    "food": "Plasticità",
+    "forbidden": ["Plastilina", "Deformare", "Forma", "Argilla", "Modellare"]
+  },
+  {
+    "food": "Impermeabilità",
+    "forbidden": ["Acqua", "Non passa", "Bagnare", "Ombrello", "Pioggia"]
+  },
+  {
+    "food": "Opacità",
+    "forbidden": ["Non vedere", "Muro", "Legno", "Luce", "Attraverso"]
+  },
+  {
+    "food": "Viscosità",
+    "forbidden": ["Miele", "Scorrere", "Denso", "Liquido", "Lento"]
+  },
+  {
+    "food": "Resistenza",
+    "forbidden": ["Forza", "Tirare", "Rompere", "Cavo", "Robusto"]
+  },
+  {
+    "food": "Lucentezza",
+    "forbidden": ["Metallo", "Brillare", "Riflettere", "Specchio", "Luce"]
+  },
+  {
+    "food": "Ruvidità",
+    "forbidden": ["Carta vetrata", "Toccare", "Liscio", "Superficie", "Grattare"]
+  },
+  {
+    "food": "Morbidezza",
+    "forbidden": ["Cuscino", "Cotone", "Soffice", "Peluche", "Toccare"]
+  },
+  {
+    "food": "Duttilità",
+    "forbidden": ["Filo", "Tirare", "Metallo", "Rame", "Sottile"]
+  },
+  {
+    "food": "Conducibilità Elettrica",
+    "forbidden": ["Elettricità", "Corrente", "Filo", "Rame", "Scossa"]
+  },
+  {
+    "food": "Isolante Termico",
+    "forbidden": ["Caldo", "Freddo", "Legno", "Polistirolo", "Non passare"]
+  },
+  {
+    "food": "Isolante Elettrico",
+    "forbidden": ["Corrente", "Scossa", "Plastica", "Gomma", "Sicurezza"]
+  },
+  {
+    "food": "Infiammabilità",
+    "forbidden": ["Fuoco", "Bruciare", "Fiamma", "Carta", "Benzina"]
+  },
+  {
+    "food": "Corrosione",
+    "forbidden": ["Ruggine", "Ferro", "Acqua", "Arancione", "Rovinare"]
+  },
+  {
+    "food": "Porosità",
+    "forbidden": ["Spugna", "Acqua", "Buchi", "Assorbire", "Pietra pomice"]
+  },
+  {
+    "food": "Stato Solido",
+    "forbidden": ["Duro", "Forma", "Ghiaccio", "Sasso", "Rigido"]
+  },
+  {
+    "food": "Stato Liquido",
+    "forbidden": ["Acqua", "Scorrere", "Forma", "Contenitore", "Bere"]
+  },
+  {
+    "food": "Stato Gassoso",
+    "forbidden": ["Aria", "Vapore", "Invisibile", "Gas", "Respirare"]
+  },
+  {
+    "food": "Flessibilità",
+    "forbidden": ["Piegare", "Curvare", "Canna", "Plastica", "Senza rompere"]
+  },
+  {
+    "food": "Rigidità",
+    "forbidden": ["Piegare", "Fisso", "Non si muove", "Legno", "Acciaio"]
+  },
+  {
+    "food": "Assorbenza",
+    "forbidden": ["Spugna", "Carta", "Acqua", "Asciugare", "Liquido"]
+  },
+  {
+    "food": "Comprimibilità",
+    "forbidden": ["Aria", "Schiacciare", "Volume", "Pompa", "Siringa"]
+  },
+  {
+    "food": "Dilatazione Termica",
+    "forbidden": ["Caldo", "Allungare", "Metallo", "Binari", "Aumentare"]
+  },
+  {
+    "food": "Attrito",
+    "forbidden": ["Strofinare", "Scivolare", "Freno", "Superfici", "Resistenza"]
+  },
+  {
+    "food": "Galleggiabilità",
+    "forbidden": ["Acqua", "Nave", "Sughero", "Stare a galla", "Affondare"]
+  },
+  {
+    "food": "Idrorepellenza",
+    "forbidden": ["Acqua", "Gocce", "Scivolare", "Impermeabile", "Bagnarsi"]
+  },
+  {
+    "food": "Volatilità",
+    "forbidden": ["Evaporare", "Alcol", "Profumo", "Aria", "Gassoso"]
+  },
+  {
+    "food": "Tenacità",
+    "forbidden": ["Urto", "Colpo", "Rompere", "Resistere", "Acciaio"]
+  },
+  {
+    "food": "Tossicità",
+    "forbidden": ["Veleno", "Pericolo", "Morte", "Sostanza", "Nocivo"]
+  },
+  {
+    "food": "Riciclabilità",
+    "forbidden": ["Rifiuti", "Riutilizzare", "Plastica", "Vetro", "Differenziata"]
+  },
+  {
+    "food": "Biodegradabilità",
+    "forbidden": ["Natura", "Scomparire", "Ambiente", "Rifiuti", "Organico"]
+  },
+  {
+    "food": "Punto di Fusione",
+    "forbidden": ["Solido", "Liquido", "Ghiaccio", "Sciogliere", "Calore"]
+  },
+  {
+    "food": "Punto di Ebollizione",
+    "forbidden": ["Liquido", "Gas", "Acqua", "Bollire", "Vapore"]
+  },
+  {
+    "food": "Colore",
+    "forbidden": ["Rosso", "Giallo", "Blu", "Tinta", "Luce"]
+  },
+  {
+    "food": "Odore",
+    "forbidden": ["Naso", "Profumo", "Puzza", "Annusare", "Sentire"]
+  },
+  {
+    "food": "Sapore",
+    "forbidden": ["Lingua", "Gusto", "Dolce", "Salato", "Assaggiare"]
+  },
+  {
+    "food": "Peso",
+    "forbidden": ["Bilancia", "Grammi", "Chili", "Forza di gravità", "Massa"]
+  },
+  {
+    "food": "Volume",
+    "forbidden": ["Spazio", "Occupare", "Misurare", "Litri", "Contenitore"]
+  },
+  {
+    "food": "Inerzia",
+    "forbidden": ["Movimento", "Fermo", "Forza", "Massa", "Corpo"]
+  },
+  {
+    "food": "Tensione Superficiale",
+    "forbidden": ["Acqua", "Goccia", "Pellicola", "Insetto", "Galleggiare"]
+  },
+  {
+    "food": "Capillarità",
+    "forbidden": ["Acqua", "Salire", "Tubo", "Pianta", "Stretto"]
+  }
+]
