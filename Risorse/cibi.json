@@ -1,0 +1,162 @@
+[
+    {
+        "food": "Pizza Margherita",
+        "forbidden": ["Impasto", "Forno", "Rotonda", "Pomodoro", "Mozzarella"]
+    },
+    {
+        "food": "Hamburger",
+        "forbidden": ["Panino", "Carne", "McDonald's", "Formaggio", "Ketchup"]
+    },
+    {
+        "food": "Patatine Fritte",
+        "forbidden": ["Patata", "Fritto", "Salato", "Olio", "Bastoncino"]
+    },
+    {
+        "food": "Pasta al Ragù",
+        "forbidden": ["Bolognese", "Spaghetti", "Carne", "Sugo", "Pomodoro"]
+    },
+    {
+        "food": "Pasta alla Carbonara",
+        "forbidden": ["Spaghetti", "Uovo", "Guanciale", "Pecorino", "Pepe"]
+    },
+    {
+        "food": "Lasagna",
+        "forbidden": ["Pasta", "Sfoglia", "Besciamella", "Forno", "Strati"]
+    },
+    {
+        "food": "Nutella",
+        "forbidden": ["Crema", "Spalmabile", "Nocciola", "Vasetto", "Cioccolato"]
+    },
+    {
+        "food": "Gelato",
+        "forbidden": ["Cono", "Coppetta", "Freddo", "Gusto", "Cremoso"]
+    },
+    {
+        "food": "Popcorn",
+        "forbidden": ["Mais", "Scoppia", "Cinema", "Bianco", "Salato"]
+    },
+    {
+        "food": "Cotoletta alla Milanese",
+        "forbidden": ["Carne", "Impanata", "Fritta", "Orecchia", "Elefante"]
+    },
+    {
+        "food": "Pollo Arrosto",
+        "forbidden": ["Carne", "Forno", "Coscia", "Domenica", "Girarrosto"]
+    },
+    {
+        "food": "Kebab",
+        "forbidden": ["Panino", "Carne", "Piadina", "Arrotolato", "Cipolla"]
+    },
+    {
+        "food": "Tiramisù",
+        "forbidden": ["Caffè", "Mascarpone", "Savoiardi", "Cacao", "Dolce"]
+    },
+    {
+        "food": "Sushi",
+        "forbidden": ["Pesce", "Crudo", "Riso", "Alga", "Giapponese"]
+    },
+    {
+        "food": "Coca-Cola",
+        "forbidden": ["Bibita", "Gassata", "Lattina", "Zucchero", "Frizzante"]
+    },
+    {
+        "food": "Hot Dog",
+        "forbidden": ["Panino", "Wurstel", "Senape", "Salsiccia", "Americano"]
+    },
+    {
+        "food": "Insalata di Riso",
+        "forbidden": ["Riso", "Fredda", "Condiriso", "Verdure", "Estate"]
+    },
+    {
+        "food": "Gnocchi",
+        "forbidden": ["Patate", "Pasta", "Morbidi", "Formaggio", "Chicche"]
+    },
+    {
+        "food": "Toast",
+        "forbidden": ["Pane", "Prosciutto", "Formaggio", "Tostapane", "Quadrato"]
+    },
+    {
+        "food": "Piadina",
+        "forbidden": ["Romagna", "Sottile", "Rotonda", "Farcita", "Strutto"]
+    },
+    {
+        "food": "Cornetto (Croissant)",
+        "forbidden": ["Colazione", "Brioche", "Sfoglia", "Marmellata", "Bar"]
+    },
+    {
+        "food": "Polpette al sugo",
+        "forbidden": ["Carne", "Palline", "Sugo", "Nonna", "Macinato"]
+    },
+    {
+        "food": "Crêpe",
+        "forbidden": ["Sottile", "Padella", "Dolce", "Salata", "Arrotolata"]
+    },
+    {
+        "food": "Bastoncini di Pesce",
+        "forbidden": ["Pesce", "Findus", "Impanati", "Forno", "Capitano"]
+    },
+    {
+        "food": "Prosciutto e Melone",
+        "forbidden": ["Prosciutto", "Melone", "Antipasto", "Estate", "Dolce/Salato"]
+    },
+    {
+        "food": "Waffle",
+        "forbidden": ["Piastra", "Griglia", "Dolce", "Sciroppo", "Zucchero a velo"]
+    },
+    {
+        "food": "Pancake",
+        "forbidden": ["Sciroppo", "Acero", "Colazione", "Frittella", "Torre"]
+    },
+    {
+        "food": "Muffin",
+        "forbidden": ["Dolcetto", "Pirolino", "Cioccolato", "Forno", "Americano"]
+    },
+    {
+        "food": "Mela",
+        "forbidden": ["Frutto", "Rossa", "Verde", "Torsolo", "Biancaneve"]
+    },
+    {
+        "food": "Banana",
+        "forbidden": ["Frutto", "Gialla", "Scimmia", "Sbucciare", "Casco"]
+    },
+    {
+        "food": "Fragole",
+        "forbidden": ["Frutto", "Rosso", "Panna", "Piccolo", "Semini"]
+    },
+    {
+        "food": "Uva",
+        "forbidden": ["Frutto", "Grappolo", "Acino", "Vino", "Chicco"]
+    },
+    {
+        "food": "Uovo di Pasqua",
+        "forbidden": ["Cioccolato", "Sorpresa", "Incartato", "Rompere", "Gallina"]
+    },
+    {
+        "food": "Caramella Gommosa",
+        "forbidden": ["Orsetto", "Zucchero", "Masticare", "Dolce", "Gelatina"]
+    },
+    {
+        "food": "Minestrone",
+        "forbidden": ["Verdure", "Zuppa", "Caldo", "Cucchiaio", "Inverno"]
+    },
+    {
+        "food": "Pane e Salame",
+        "forbidden": ["Panino", "Affettato", "Merenda", "Maiale", "Insaccato"]
+    },
+    {
+        "food": "Cereali",
+        "forbidden": ["Colazione", "Latte", "Scatola", "Croccanti", "Fiocchi"]
+    },
+    {
+        "food": "Panna Cotta",
+        "forbidden": ["Dolce", "Budino", "Bianco", "Cucchiaio", "Caramello"]
+    },
+    {
+        "food": "Aranciata",
+        "forbidden": ["Arancia", "Bibita", "Gassata", "Fanta", "Bottiglia"]
+    },
+    {
+        "food": "Calzone",
+        "forbidden": ["Pizza", "Ripieno", "Chiuso", "Forno", "Fritto"]
+    }
+]

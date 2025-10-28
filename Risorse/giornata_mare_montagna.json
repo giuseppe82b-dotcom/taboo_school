@@ -1,0 +1,202 @@
+[
+    {
+        "food": "Spiaggia",
+        "forbidden": ["Sabbia", "Mare", "Ombrellone", "Bagnasciuga", "Stendersi"]
+    },
+    {
+        "food": "Sentiero",
+        "forbidden": ["Camminare", "Montagna", "Bosco", "Percorso", "Segnato"]
+    },
+    {
+        "food": "Ombrellone",
+        "forbidden": ["Spiaggia", "Sole", "Ombra", "Palo", "Telo"]
+    },
+    {
+        "food": "Zaino",
+        "forbidden": ["Spalle", "Portare", "Cose", "Gita", "Sacca"]
+    },
+    {
+        "food": "Castello di sabbia",
+        "forbidden": ["Sabbia", "Torre", "Formine", "Secchiello", "Acqua"]
+    },
+    {
+        "food": "Scarponi",
+        "forbidden": ["Piedi", "Scarpe", "Montagna", "Camminare", "Lacci"]
+    },
+    {
+        "food": "Conchiglia",
+        "forbidden": ["Mare", "Spiaggia", "Guscio", "Raccogliere", "Spirale"]
+    },
+    {
+        "food": "Bosco",
+        "forbidden": ["Alberi", "Foresta", "Sentiero", "Natura", "Ombra"]
+    },
+    {
+        "food": "Onda",
+        "forbidden": ["Mare", "Spuma", "Cavallone", "Arriva", "Bagna"]
+    },
+    {
+        "food": "Rifugio",
+        "forbidden": ["Montagna", "Dormire", "Cibo", "Cima", "Alpinisti"]
+    },
+    {
+        "food": "Bagnino",
+        "forbidden": ["Spiaggia", "Salvare", "Fischietto", "Pericolo", "Torretta"]
+    },
+    {
+        "food": "Vetta",
+        "forbidden": ["Montagna", "Cima", "Salire", "Arrivare", "Punto più alto"]
+    },
+    {
+        "food": "Crema solare",
+        "forbidden": ["Sole", "Protezione", "Spalmare", "Pelle", "Scottatura"]
+    },
+    {
+        "food": "Funivia",
+        "forbidden": ["Montagna", "Salire", "Cavo", "Cabina", "Sospeso"]
+    },
+    {
+        "food": "Tuffo",
+        "forbidden": ["Acqua", "Saltare", "Piscina", "Trampolino", "Entrare"]
+    },
+    {
+        "food": "Marmotta",
+        "forbidden": ["Animale", "Fischio", "Montagna", "Tana", "Roditore"]
+    },
+    {
+        "food": "Maschera (sub)",
+        "forbidden": ["Occhi", "Vedere", "Sott'acqua", "Snorkel", "Respirare"]
+    },
+    {
+        "food": "Aquila",
+        "forbidden": ["Uccello", "Volare", "Rapace", "Becco", "Reale"]
+    },
+    {
+        "food": "Pinne",
+        "forbidden": ["Piedi", "Nuotare", "Pesce", "Veloce", "Gomma"]
+    },
+    {
+        "food": "Ruscello",
+        "forbidden": ["Acqua", "Scorre", "Fiume", "Piccolo", "Sassi"]
+    },
+    {
+        "food": "Granchio",
+        "forbidden": ["Chele", "Animale", "Sabbia", "Scoglio", "Di lato"]
+    },
+    {
+        "food": "Cascata",
+        "forbidden": ["Acqua", "Cade", "Salto", "Rumore", "Rocce"]
+    },
+    {
+        "food": "Medusa",
+        "forbidden": ["Tentacoli", "Mare", "Pizzica", "Trasparente", "Galleggia"]
+    },
+    {
+        "food": "Borraccia",
+        "forbidden": ["Acqua", "Bere", "Zaino", "Tappo", "Contenitore"]
+    },
+    {
+        "food": "Scoglio",
+        "forbidden": ["Roccia", "Mare", "Sasso", "Appuntito", "Onda"]
+    },
+    {
+        "food": "Panorama",
+        "forbidden": ["Vista", "Montagna", "Vedere", "Paesaggio", "Bello"]
+    },
+    {
+        "food": "Gelato",
+        "forbidden": ["Freddo", "Cono", "Gusto", "Panna", "Leccare"]
+    },
+    {
+        "food": "Baita",
+        "forbidden": ["Legno", "Casa", "Montagna", "Camino", "Neve"]
+    },
+    {
+        "food": "Barca a vela",
+        "forbidden": ["Navigare", "Mare", "Vento", "Albero", "Timone"]
+    },
+    {
+        "food": "Neve",
+        "forbidden": ["Bianca", "Fredda", "Inverno", "Fiocchi", "Sciare"]
+    },
+    {
+        "food": "Gabbiano",
+        "forbidden": ["Uccello", "Mare", "Verso", "Vola", "Bianco"]
+    },
+    {
+        "food": "Pic-nic",
+        "forbidden": ["Mangiare", "Fuori", "Prato", "Coperta", "Cestino"]
+    },
+    {
+        "food": "Asciugamano",
+        "forbidden": ["Telo", "Bagnato", "Asciugare", "Spiaggia", "Cotone"]
+    },
+    {
+        "food": "Bussola",
+        "forbidden": ["Nord", "Direzione", "Mappa", "Orientarsi", "Ago"]
+    },
+    {
+        "food": "Tramonto",
+        "forbidden": ["Sole", "Scende", "Sera", "Rosso", "Orizzonte"]
+    },
+    {
+        "food": "Roccia",
+        "forbidden": ["Sasso", "Pietra", "Dura", "Arrampicata", "Parete"]
+    },
+    {
+        "food": "Secchiello",
+        "forbidden": ["Sabbia", "Giocare", "Castello", "Plastica", "Riempire"]
+    },
+    {
+        "food": "Funghi",
+        "forbidden": ["Bosco", "Cappello", "Gambo", "Raccogliere", "Velenoso"]
+    },
+    {
+        "food": "Faro",
+        "forbidden": ["Luce", "Torre", "Mare", "Notte", "Segnale"]
+    },
+    {
+        "food": "Pigna",
+        "forbidden": ["Albero", "Pino", "Legno", "Bosco", "Cadere"]
+    },
+    {
+        "food": "Sdraio",
+        "forbidden": ["Stendersi", "Spiaggia", "Sole", "Sedia", "Tela"]
+    },
+    {
+        "food": "Sci",
+        "forbidden": ["Neve", "Piedi", "Scendere", "Pista", "Bastoncini"]
+    },
+    {
+        "food": "Stella marina",
+        "forbidden": ["Mare", "Punte", "Animale", "Fondale", "Sabbia"]
+    },
+    {
+        "food": "Lago alpino",
+        "forbidden": ["Acqua", "Montagna", "Freddo", "Specchio", "Blu"]
+    },
+    {
+        "food": "Falò",
+        "forbidden": ["Fuoco", "Spiaggia", "Legna", "Caldo", "Notte"]
+    },
+    {
+        "food": "Escursione",
+        "forbidden": ["Camminata", "Zaino", "Sentiero", "Gita", "Natura"]
+    },
+    {
+        "food": "Alba",
+        "forbidden": ["Sole", "Sorge", "Mattina", "Luce", "Cielo"]
+    },
+    {
+        "food": "Stella alpina",
+        "forbidden": ["Fiore", "Montagna", "Rara", "Bianca", "Protetta"]
+    },
+    {
+        "food": "Porto",
+        "forbidden": ["Barche", "Attraccare", "Molo", "Acqua", "Ancora"]
+    },
+    {
+        "food": "Abete",
+        "forbidden": ["Albero", "Natale", "Aghi", "Pigna", "Conifera"]
+    }
+]
