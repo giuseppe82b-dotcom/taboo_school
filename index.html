@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descrivi! - Anteprima</title>
+    <title>Descrivi!</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
         :root {
@@ -81,25 +81,6 @@
             border-radius: 8px; cursor: pointer; font-weight: 600; display: inline-block;
             border-bottom: 4px solid #666; font-size: 1em;
         }
-        
-        /* STILE LINK DI DOWNLOAD */
-        .example-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: var(--dark-blue);
-            text-decoration: none;
-            font-size: 0.9em;
-            font-weight: 600;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s;
-            padding: 5px;
-        }
-        .example-link:hover {
-            border-bottom: 1px solid var(--dark-blue);
-            opacity: 0.8;
-            background-color: rgba(255,255,255,0.3);
-            border-radius: 5px;
-        }
     </style>
 </head>
 <body>
@@ -109,26 +90,14 @@
             <div class="menu-option">
                 <label for="collections-dropdown" style="font-weight: 600; color: var(--dark-blue); font-size: 1.2em; margin-bottom: 10px; display: block;">Scegli una categoria:</label>
                 <select id="collections-dropdown">
-                    <!-- Le opzioni verranno inserite via JS -->
-                </select>
+                    </select>
                 <button id="start-from-collection-btn" class="menu-btn" style="margin-top: 15px;">Avvia Gioco</button>
             </div>
-            
             <hr style="border: 1px solid var(--dark-blue); margin: 30px 0;">
-            
             <div class="menu-option">
                 <input type="file" id="file-loader" accept=".json">
                 <label for="file-loader" class="menu-btn">Oppure Carica dal Computer</label>
             </div>
-            
-            <!-- LINK DOWNLOAD MODIFICATO PER L'ANTEPRIMA -->
-            <!-- Nota: Ho usato 'data:text/json' per far funzionare il download qui nell'anteprima senza server -->
-            <a href="data:text/json;charset=utf-8,%5B%7B%22food%22%3A%22PIZZA%22%2C%22forbidden%22%3A%5B%22Margherita%22%2C%22Pomodoro%22%2C%22Italia%22%2C%22Rotonda%22%5D%7D%2C%7B%22food%22%3A%22GELATO%22%2C%22forbidden%22%3A%5B%22Cono%22%2C%22Coppetta%22%2C%22Estate%22%2C%22Gusti%22%5D%7D%2C%7B%22food%22%3A%22CAFF%C3%88%22%2C%22forbidden%22%3A%5B%22Moka%22%2C%22Espresso%22%2C%22Bar%22%2C%22Colazione%22%5D%7D%5D" 
-               download="TabooS_Esempio.json" 
-               class="example-link">
-                ⬇️ Scarica modello file (TabooS_Esempio.json)
-            </a>
-
             <div id="status-message"></div>
         </div>
 
@@ -140,9 +109,9 @@
             <button id="back-to-menu-from-game" class="back-btn">Torna al Menu</button>
         </div>
     </div>
-
     <script>
-        // --- CONFIGURAZIONE ---
+        // --- CONFIGURAZIONE DEI FILE JSON ---
+        // Associa il testo che apparirà nel menu al nome del file corrispondente.
         const collectionFiles = {
             "🍔 Cibi e Bevande 🍹": "cibi.json",
             "🎨 Interessi e Hobby 🎮": "interessi.json",
@@ -151,6 +120,7 @@
             "🧑‍🎤 Personaggi Famosi 🎬": "personaggi_famori.json",
             "⚽ Tipi di Sport 🏆": "tipi_di_sport.json"
         };
+        // --- FINE CONFIGURAZIONE ---
 
         const mainMenu = document.getElementById('main-menu');
         const gameArea = document.getElementById('game-area');
@@ -178,24 +148,25 @@
             fileLoaderInput.value = '';
         }
         
-        // Simulazione caricamento per l'anteprima (poiché i file json non esistono sul server)
+        // Funzione per caricare e avviare il gioco da un file JSON
         async function loadAndStart(file) {
             statusMessage.textContent = 'Caricamento...';
-            
-            // NOTA PER L'UTENTE: In un sito vero, qui c'è il fetch(file).
-            // Nell'anteprima, simulerò un errore se il file non esiste per farti vedere il messaggio.
             try {
                 const response = await fetch(file);
                 if (!response.ok) {
-                    throw new Error(`File non trovato (normale in anteprima): ${response.statusText}`);
+                    throw new Error(`Impossibile caricare il file: ${response.statusText}`);
                 }
                 const data = await response.json();
-                // ... resto del codice normale ...
+                if (Array.isArray(data) && data.length > 0) {
+                    currentCollectionData = data;
+                    startGame();
+                } else {
+                    throw new Error('Il file è vuoto o non ha il formato corretto.');
+                }
             } catch (error) {
-                console.error('Errore simulato o reale:', error);
-                // Per l'anteprima, mostro un messaggio chiaro
-                statusMessage.style.color = "red";
-                statusMessage.textContent = `⚠️ Nota: Il pulsante "Avvia Gioco" cerca file (es. ${file}) che non sono caricati in questa anteprima. Usa "Carica dal Computer" per testare il gioco!`;
+                console.error('Errore durante il caricamento:', error);
+                statusMessage.textContent = `Errore: ${error.message}`;
+                showMainMenu();
             }
         }
 
@@ -214,7 +185,6 @@
                         throw new Error('Il file è vuoto o non ha il formato corretto.');
                     }
                 } catch (error) {
-                    statusMessage.style.color = "red";
                     statusMessage.textContent = 'Errore: il file JSON non è valido!';
                 }
             };
@@ -226,7 +196,7 @@
             collectionsDropdown.innerHTML = '';
             collectionNames.forEach(name => {
                 const option = document.createElement('option');
-                option.value = collectionFiles[name];
+                option.value = collectionFiles[name]; // Il valore ora è il nome del file
                 option.textContent = name;
                 collectionsDropdown.appendChild(option);
             });
@@ -246,21 +216,13 @@
         function showNewWord() {
             if (currentCollectionData.length === 0) return;
             let randomIndex;
-            // Evita ripetizioni immediate se possibile
-            if (currentCollectionData.length > 1) {
-                do {
-                    randomIndex = Math.floor(Math.random() * currentCollectionData.length);
-                } while (randomIndex === lastIndex);
-            } else {
-                randomIndex = 0;
-            }
+            do {
+                randomIndex = Math.floor(Math.random() * currentCollectionData.length);
+            } while (randomIndex === lastIndex && currentCollectionData.length > 1);
             
             lastIndex = randomIndex;
             const selectedItem = currentCollectionData[randomIndex];
-            
-            // Supporto sia per campo "food" che "parola" (per compatibilità)
-            wordItemElement.textContent = selectedItem.food || selectedItem.parola || "Parola mancante";
-            
+            wordItemElement.textContent = selectedItem.food;
             forbiddenWordsList.innerHTML = '';
             selectedItem.forbidden.forEach(word => {
                 const listItem = document.createElement('li');
@@ -281,7 +243,9 @@
             }
         });
 
+        // Popola il menu a tendina quando la pagina è pronta
         document.addEventListener('DOMContentLoaded', populateDropdown);
+
     </script>
 </body>
 </html>
