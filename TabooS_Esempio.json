@@ -1,0 +1,11 @@
+[
+    {
+        "food": "Pizza Margherita",
+        "forbidden": ["Impasto", "Forno", "Rotonda", "Pomodoro", "Mozzarella"]
+    },
+    {
+        "food": "Hamburger",
+        "forbidden": ["Panino", "Carne", "McDonald's", "Formaggio", "Ketchup"]
+    },
+  
+]
